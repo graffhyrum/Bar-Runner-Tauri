@@ -8,7 +8,7 @@
   },
   "package": {
     "productName": "br_tauri_hcj",
-    "version": "0.0.3"
+    "version": "0.0.4"
   },
   "tauri": {
     "allowlist": {
@@ -56,10 +56,8 @@
     "windows": [
       {
         "fullscreen": false,
-        "height": 600,
         "resizable": true,
-        "title": "Bar Runner #alpha#",
-        "width": 800
+        "title": "Bar Runner #alpha#"
       }
     ]
   }

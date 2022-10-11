@@ -1,70 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8"/>
-    <link rel="stylesheet" href="style.css"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Tauri App</title>
-    <script type="module" src="/main.js" defer></script>
-    <style>
-        .logo.vanilla:hover {
-            filter: drop-shadow(0 0 2em #ffe21c);
-        }
-    </style>
+  <meta charset="UTF-8"/>
+  <link rel="stylesheet" href="style.css"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tauri App</title>
+  <script type="module" src="/main.js" defer></script>
 </head>
 
 <body>
 <header class="header">
-    <h1>Bar Runner</h1>
+  <h1>Bar Runner</h1>
 </header>
 <nav id="top-nav">
-    <input id="message-search-input" placeholder="Search messages...">
+  <input id="message-search-input" placeholder="Search messages...">
+  <div id="top-nav-btn-row" class="row">
     <button id="search-btn">Go</button>
     <button id="generate-btn">Generate</button>
     <button id="setup-btn">Setup</button>
+  </div>
 </nav>
-
-<div class="container">
-    <section id="message-list-wrap">
-        <h2>Message List</h2>
-        <div id="message-list-controls">
-            <button id="expand-btn">Expand</button>
-            <button id="collapse-btn">Collapse</button>
-        </div>
-        <ul id="message-list"f>
-            <li>placeholder 1</li>
-            <li>placeholder 2</li>
-            <li>placeholder 2</li>
-            <li>placeholder 2</li>
-            <li>placeholder 2</li>
-            <li>placeholder 2</li>
-            <li>placeholder 2</li>
-            <li>placeholder 2</li>
-            <li>placeholder 2</li>
-            <li>placeholder 2</li>
-            <li>placeholder 2</li>
-            <li>placeholder 2</li>
-            <li>placeholder 2</li>
-            <li>placeholder 2</li>
-            <li>placeholder 2</li>
-            <li>placeholder 2</li>
-            <li>placeholder 2</li>
-        </ul>
-    </section>
-    <section id="message-editor-wrap">
-        <h2 id="current-message-name">Message Pad</h2>
-        <label for="message-editor"></label>
-        <textarea id="message-editor"></textarea>
-    </section>
+<div id="message-list-and-pad">
+  <div id="message-list-wrap">
+    <h2>Message List</h2>
+    <div id="message-list-controls">
+      <button id="expand-btn">Expand</button>
+      <button id="collapse-btn">Collapse</button>
+    </div>
+    <ul id="message-list" style="height:1fr">
+      <li>placeholder 1</li>
+      <li>placeholder 2</li>
+      <li>placeholder 2</li>
+      <li>placeholder 2</li>
+      <li>placeholder 2</li>
+      <li>placeholder 2</li>
+      <li>placeholder 2</li>
+      <li>placeholder 2</li>
+    </ul>
+  </div>
+  <section id="message-editor-wrap">
+    <h2 style="grid-column: 1; grid-row:1;">Message Pad</h2>
+    <label for="message-editor" id="current-message-name">
+      Current Message
+    </label>
+    <textarea id="message-editor"></textarea>
+    <div id="message-pad-control" class="row">
+      <button id="send-to-clipboard">Copy To Clipboard</button>
+      <button id="randomize-message">Randomize</button>
+      <button id="clear-message-editor">Clear</button>
+    </div>
+  </section>
 </div>
-
-<div class="row">
-    <button id="send-to-clipboard">Copy To Clipboard</button>
-    <button id="randomize-message">Randomize</button>
-    <button id="clear-message-editor">Clear</button>
-</div>
-</body>
 <footer>
-    <p>brought to you by carls junior TM</p>
+  <p>brought to you by carls junior TM</p>
 </footer>
+</body>
+
 </html>
