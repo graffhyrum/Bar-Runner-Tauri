@@ -7,7 +7,7 @@
     "tauri": "tauri",
     "localhost": "servor src index.html 8088 --reload",
     "ui-build": "rollup -c",
-    "ui-dev": "rollup -c -w & npm run localhost"
+    "ui-dev": "rollup -c -w"
   },
   "repository": {
     "type": "git",

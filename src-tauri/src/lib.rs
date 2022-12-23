@@ -1,25 +1,57 @@
 use std::iter::Map;
 
 pub struct FileNames {
-  pub messages: &'static str,
-  pub sections: &'static str,
-  pub snippets: &'static str,
+    pub messages: &'static str,
+    pub sections: &'static str,
+    pub snippets: &'static str,
 }
 
-pub struct RpMessage {
-  labels: Vec<String>,
-  sections: Map<String, Vec<Section>>,
+pub struct MsgFolder {
+    id: String,
+    name: String,
+    ctime: String,
 }
 
+pub struct Message {
+    //ie some_drink
+    id: String,
+    // server ID
+    name: String,
+    // "Screwdriver"
+    labels: Vec<String>,
+    // "Asmo,Drink,Highball"
+    sections: Vec<String>, // Vec of section IDs
+}
 
 pub struct Section {
-  name: String,
-  snippets: Vec<Snippet>,
+    id: String,
+    name: String,
+    variants: Vec<Variant>,
 }
 
-pub struct Snippet {
-  name: String,
-  labels: Vec<String>,
-  tokens: Map<String, String>,
-  body: String,
+pub struct Variant {
+    id: String,
+    name: String,
+    labels: Vec<String>,
+    body: Option<String>,
+}
+
+trait GetId {
+    fn get_id(&self) -> String;
+}
+
+impl GetId for Message {
+    fn get_id(&self) -> String { self.id.to_string() }
+}
+
+impl GetId for Section {
+    fn get_id(&self) -> String {
+        self.id.to_string()
+    }
+}
+
+impl GetId for Variant {
+    fn get_id(&self) -> String {
+        self.id.to_string()
+    }
 }
